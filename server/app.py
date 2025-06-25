@@ -39,7 +39,7 @@ class CheckSession(Resource):
         if session.get('user_id'):
             user = User.query.filter(User.id==session['user_id']).first()
             return UserSchema().dump(user), 200
-        return {}, 401
+        return {}, 204
 
 class Login(Resource):
     def post(self):
